@@ -1,8 +1,13 @@
 <div class="container">
+    <nav class="navbar">
+ 
+        <input type="text" class="form-control" name="name" [(ngModel)] = "name" (ngModelChange)= "Search()" autocomplete="off"
+        placeholder="Start searching for...">
+    </nav>
     <button style="height: 70px; width: 70px; margin-left: 1000px;" (click)="sort('id')">sort by ID:<i class="fa fa-sort"></i></button>
     <div class="row">
         <!-- orderBy: key :reverse -->
-        <ng-container *ngFor="let item of productlist.results|orderBy: key :reverse">
+        <ng-container *ngFor="let item of productlist.results|orderBy: key :reverse|filter:name">
             <div class="card col-md-3">
                 <img src="{{item.image}}" alt="">
                 <h6> Id: {{item.id}} &nbsp; </h6>
@@ -17,3 +22,38 @@
         </ng-container>
     </div>
 </div>
+<!-- <h1>characters data</h1> -->
+   <!-- <input class="form-control" type="text" name ="name" [(ngModel)]= "name" (ngModelChange) = "Search()"  placeholder="search characters"> -->
+<!-- <nav class="navbar">
+ 
+    <input type="text" class="form-control" name="name" [(ngModel)] = "name" (ngModelChange)= "Search()"
+    placeholder="Start searching for...">
+</nav>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>image</th>
+            <th>id</th>
+            <th>name</th>
+            <th>status</th>
+            <th>species</th>
+            <th>gender</th>
+            <th>created</th>
+            <th>origin</th>
+            <th>location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of productlist.results| filter:name" >
+            <img src="{{user.image}}" alt="">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.status}}</td>
+            <td>{{user.species}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.created}}</td>
+            <td>{{user.origin.name}}</td>
+            <td>{{user.location.name}}</td>
+        </tr>
+    </tbody>
+</table> -->

@@ -1,17 +1,52 @@
-<div class="container">
-    <nav class="navbar">
- 
-        <input type="text" class="form-control" name="name" [(ngModel)] = "name" (ngModelChange)= "Search()" autocomplete="off"
-        placeholder="Start searching for...">
+<section>
+<div style="width: 20%; float:left" class="row">
+    <div class="filters"><strong>Species</strong> <br>
+        <input type="checkbox"> human <br>
+        <input type="checkbox"> mythology <br>
+        <input type="checkbox"> other species 
+        
+        <!-- <button style="height: 70px; width: 70px; margin-left: 1000px;" (click)="sort('id')">sort by ID:<i class="fa fa-sort"></i></button>-->
+    </div> 
+    <div class="filters"><strong>Gender</strong> <br>
+        <input type="checkbox"> male <br>
+        <input type="checkbox"> female <br>
+        <!-- <button style="height: 70px; width: 70px; margin-left: 1000px;" (click)="sort('id')">sort by ID:<i class="fa fa-sort"></i></button>-->
+    </div> 
+    <div class="filters"><strong>origin</strong> <br>
+        <input type="checkbox"> unknown <br>
+        <input type="checkbox"> post:earth <br>
+        <input type="checkbox"> nupitia :5 <br>
+       
+        <!-- <button style="height: 70px; width: 70px; margin-left: 1000px;" (click)="sort('id')">sort by ID:<i class="fa fa-sort"></i></button>-->
+    </div> 
+</div></section>
+<div style="padding-bottom: 1px;" class="container">
+
+    <nav class="navbar ">
+
+
+
+        <div style="width: 100%;">
+            <input type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="Search()"
+                autocomplete="off" placeholder="Start searching for...">
+            <!-- <i style="margin-left: 500px;" class="fas fa-search search-icon"></i> -->
+            <!-- <span
+                style="margin-left: 1075px; top: 50px;" class="fas fa-search search-icon"></span> -->
+        </div>
+       
+
+
     </nav>
-    <button style="height: 70px; width: 70px; margin-left: 1000px;" (click)="sort('id')">sort by ID:<i class="fa fa-sort"></i></button>
+    <input (click)="sort('id')" type="checkbox"> Sort By id:
+
+
     <div class="row">
         <!-- orderBy: key :reverse -->
         <ng-container *ngFor="let item of productlist.results|orderBy: key :reverse|filter:name">
             <div class="card col-md-3">
                 <img src="{{item.image}}" alt="">
                 <h6> Id: {{item.id}} &nbsp; </h6>
-                <h6 >name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.name}}</h6>
+                <h6>name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.name}}</h6>
                 <h6>Status:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.status}}</h6>
                 <h6>Species:&nbsp;&nbsp;&nbsp;{{item.species}}</h6>
                 <h6>gende &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.gender}}</h6>
@@ -23,9 +58,9 @@
     </div>
 </div>
 <!-- <h1>characters data</h1> -->
-   <!-- <input class="form-control" type="text" name ="name" [(ngModel)]= "name" (ngModelChange) = "Search()"  placeholder="search characters"> -->
+<!-- <input class="form-control" type="text" name ="name" [(ngModel)]= "name" (ngModelChange) = "Search()"  placeholder="search characters"> -->
 <!-- <nav class="navbar">
- 
+
     <input type="text" class="form-control" name="name" [(ngModel)] = "name" (ngModelChange)= "Search()"
     placeholder="Start searching for...">
 </nav>

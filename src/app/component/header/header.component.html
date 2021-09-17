@@ -1,0 +1,16 @@
+<header>
+    <div class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size: 40px;" class="fas fa-user-astronaut">&nbsp;
+            </i>
+            <strong style="font-size: 30px;">Sapient</strong>
+            <div class="form-group">
+                <input class="form-control" type="text" name ="name" [(ngModel)]= "name" (ngModelChange) = "Search()"  placeholder="search characters">
+            </div>
+            <span class="fas fa-search search-icon"></span>
+        </div>
+        <button class="btn btn-primary">
+            <i class="fas fa-users fa-2x"></i>
+        </button>
+    </div>
+</header>

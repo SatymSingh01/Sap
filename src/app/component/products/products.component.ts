@@ -20,12 +20,21 @@ export class ProductsComponent implements OnInit {
     })
   }
   Search(){
-    if(this.name==" "){
+    if(this.name==""){
       this.ngOnInit();
     }else{
-      this.productlist= this.productlist.filter((res1: { name: any; }) =>{
-        return res1.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
-      });
+      this.productlist= this.productlist.filter(((res: { name: any; }) =>{
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+      }));
+    }
+  }
+  Search1(){
+    if(this.name==""){
+      this.ngOnInit();
+    }else{
+      this.productlist= this.productlist.filter(((res: { name: any; }) =>{
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+      }));
     }
   }
   key:string = 'id';
